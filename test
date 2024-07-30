@@ -1,2 +1,22 @@
 7. Vulnerability Scanning
 sudo nmap -sV -p 443 --script "vuln" 192.168.50.124
+sudo cp /home/kali/Downloads/http-vuln-cve-2021-41773.nse /usr/share/nmap/scripts/http-vuln-cve2021-41773.nse
+sudo nmap -sV -p 443 --script "http-vuln-cve2021-41773" 192.168.50.124
+
+8. Introduction to Web Application Attacks
+sudo nmap -p80  -sV 192.168.50.20
+sudo nmap -p80 --script=http-enum 192.168.50.20
+
+gobuster dir -u 192.168.50.20 -w /usr/share/wordlists/dirb/common.txt -t 5
+big.txt  catala.txt  common.txt  euskera.txt  extensions_common.txt  indexes.txt  mutations_common.txt  others  small.txt  spanish.txt  stress  vulns
+
+vulns:
+apache.txt  coldfusion.txt         fatwire.txt    hyperion.txt  jboss.txt   netware.txt  sap.txt         tests.txt     weblogic.txt
+axis.txt    domino.txt             frontpage.txt  iis.txt       jersey.txt  oracle.txt   sharepoint.txt  tomcat.txt    websphere.txt
+cgis.txt    fatwire_pagenames.txt  hpsmh.txt      iplanet.txt   jrun.txt    ror.txt      sunas.txt       vignette.txt
+
+/usr/share/wordlists/dirbuster :
+apache-user-enum-1.0.txt  directories.jbrofuzz    directory-list-2.3-medium.txt  directory-list-lowercase-2.3-medium.txt
+apache-user-enum-2.0.txt  directory-list-1.0.txt  directory-list-2.3-small.txt   directory-list-lowercase-2.3-small.txt
+
+8.3. Web Application Enumeration
