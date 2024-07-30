@@ -1,0 +1,36 @@
+Service Enum
+
+Does a Webpage exist?
+=> What kind of product is it?
+=> Does it have a login page?
+=> Any known exploits?
+
+Login Page available
+=> Default Creds (admin:admin, user:user, google product)
+=> SQL Login Bypass (' or 1=1 --, https://portswigger.net/support/using-sql-injection-to-bypass-authentication)
+
+Can't login, no known exploit
+=> FTP with anonymous user?
+=> SMB as anonymous or guest?
+
+Nothing on any service
+=> LDAP anonymous bind? Maybe something in the details/descriptions
+=> If nothing else found but data returned, good cuz I have a user list
+
+Last Resort
+=> Bruteforcing Webapp/FTP
+
+Web Page Enum
+
+Can I edit templates or upload files?
+=> aspx, asp, php etc. webshell!
+
+Is there something that allows me to execute scripts/commands?
+=> Check if that feature of the product can be abused
+
+Am I able to control input for something that says "someone will check this" e.g?
+=> Setup responder, python webserver, nc or whatever to check if someone will actual click on my link, share path or whatever I put in.
+Nice trick is to host a smbshare using impacket-smbserver and a index.html page using python that tries to open content on a share. > https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb#smb-trap
+
+If previous delivered no results
+=> Check Blog Posts, Page Source etc. to see if you can find any usernames/passwords and so on
